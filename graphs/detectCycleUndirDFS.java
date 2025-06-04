@@ -1,8 +1,8 @@
 import java.util.*;
 
 public class detectCycleUndirDFS {
-    private int V;
-    private List<List<Integer>> adj;
+    private final int V;
+    private final List<List<Integer>> adj;
 
     public detectCycleUndirDFS(int V) {
         this.V = V;
