@@ -27,7 +27,6 @@ class DFS {
         }
     }
 
-    // Optional: Main method for testing
     public static void main(String[] args) {
         DFS sol = new DFS();
 
@@ -42,3 +41,15 @@ class DFS {
         System.out.println(result);  // Output: [0, 2, 4, 3, 1]
     }
 }
+
+// Algorithm Flow:
+// 1. Start DFS traversal from node 0.
+// 2. Mark the current node as visited and add it to the result list.
+// 3. Recursively visit all unvisited neighbors of the current node.
+//
+// Time Complexity: O(V + E)
+//   - V = number of vertices
+//   - E = number of edges
+//
+// Space Complexity: O(V)
+//   - Due to the visited array and recursion stack

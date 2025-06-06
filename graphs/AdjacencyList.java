@@ -32,3 +32,20 @@ public class AdjacencyList {
         }
     }
 }
+
+/*
+Algorithm Flow:
+1. Create an array of lists (adjList), size n+1.
+2. Initialize each list to store neighbors.
+3. For each edge (u, v), add v to u’s list and u to v’s list (undirected).
+4. Print the adjacency list.
+
+Time Complexity (TC):
+- Initializing lists: O(n)
+- Adding edges: O(E) (E = number of edges)
+- Printing adjacency list: O(n + E)
+- Overall: O(n + E)
+
+Space Complexity (SC):
+- Storing adjacency list: O(n + E)
+*/

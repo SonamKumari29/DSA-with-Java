@@ -45,3 +45,19 @@ class BFS {
         System.out.println(result);  // Output: [0, 2, 3, 1, 4]
     }
 }
+
+
+/*
+ * Algorithm Flow:
+ * 1. Start from node 0.
+ * 2. Mark as visited and add to queue.
+ * 3. While queue is not empty:
+ *    - Remove node and add to result.
+ *    - Add unvisited neighbors to queue.
+ *
+ * Time Complexity: O(V + E)
+ *   (V = number of vertices, E = number of edges)
+ *
+ * Space Complexity: O(V)
+ *   (visited array + queue)
+ */

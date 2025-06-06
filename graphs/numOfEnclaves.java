@@ -50,3 +50,15 @@ class numOfEnclaves {
         System.out.println(result); // Output: 3
     }
 }
+
+/*
+Algorithm Flow:
+- Perform DFS from all border cells with value 1 and mark them as 0.
+- These cells cannot be enclaves since they are connected to the boundary.
+- After DFS, count all remaining 1s in the grid; these are the enclaves.
+
+Time Complexity: O(m × n)
+
+Space Complexity: O(m × n) in the worst case (due to recursion stack in DFS).
+- No extra space is used for a visited array.
+*/

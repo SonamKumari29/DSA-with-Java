@@ -33,3 +33,10 @@ public class floodFillDFS {
         }
     }
 }
+/*
+Flood Fill DFS:
+- Start from (startRow, startCol), store oldColor.
+- If oldColor == newColor, return.
+- Recursively fill 4 directions if color matches oldColor.
+- Time: O(m*n), Space: O(m*n) (recursion stack).
+*/

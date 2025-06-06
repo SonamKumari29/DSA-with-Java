@@ -52,3 +52,17 @@ public class detectCycleUndirBFS {
         System.out.println(isCyclic(V, adj) ? "Cycle detected" : "No cycle");
     }
 }
+
+// Algorithm Flow:
+// 1. Start from each unvisited node.
+// 2. Use BFS and keep track of the parent node for each visited node.
+// 3. For each neighbor:
+//    - If the neighbor is not visited, mark it visited and add to the queue with current node as parent.
+//    - If the neighbor is visited and is not the parent, a cycle exists.
+// 4. If no such case is found after checking all nodes, then no cycle exists.
+
+// Time Complexity:
+// - Each node and edge is visited at most once: O(V + E)
+
+// Space Complexity:
+// - Space for adjacency list and visited array: O(V + E)

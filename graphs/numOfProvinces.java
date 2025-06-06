@@ -54,3 +54,18 @@ class numOfProvinces {
         System.out.println(numOfProvinces.numProvinces(adj, 3));
     }
 }
+
+/*
+Algorithm Flow:
+1. Convert adjacency matrix to adjacency list.
+2. For each unvisited node, call DFS.
+3. Each DFS marks a whole province.
+4. Count total DFS calls = total provinces.
+
+Time Complexity: O(V + E)
+    - V = number of nodes
+    - E = number of edges in the graph
+
+Space Complexity: O(V)
+    - Visited array + recursion stack in DFS
+*/

@@ -53,3 +53,22 @@ public class detectCycleUndirDFS {
             System.out.println("Graph doesn't contain cycle");
     }
 }
+
+/*
+Algorithm Flow:
+
+1. Initialize graph with adjacency list.
+
+2. Add undirected edges.
+
+3. For each unvisited vertex, run DFS:
+    - Mark current vertex as visited.
+    - For each neighbor:
+      - If neighbor is not visited, recursively DFS on neighbor with current as parent.
+      - If neighbor is visited and not parent, a cycle is found → return true.
+
+4. If no cycle is found after all DFS calls, return false.
+
+Time Complexity: O(V + E)
+Space Complexity: O(V + E) (adjacency list + visited array + recursion stack)
+*/
