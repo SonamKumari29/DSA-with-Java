@@ -1,47 +1,39 @@
+
 import java.util.*;
 //      0
 //    / | \
 //   2  3  1
 //    \
 //     4
-
 class BFS {
-    public ArrayList<Integer> bfs(ArrayList<ArrayList<Integer>> adj) {
+    public ArrayList<Integer> bfs(ArrayList<ArrayList<Integer>> adj) {//bfs fn that takes adj list and return bfs order
         int V = adj.size(); // number of vertices
-        ArrayList<Integer> bfsList = new ArrayList<>();
-        boolean[] visited = new boolean[V];
-        Queue<Integer> queue = new LinkedList<>();
-
-        // Start from vertex 0
-        visited[0] = true;
-        queue.add(0);
-
+        ArrayList<Integer> bfsList = new ArrayList<>();//bfs ans store here
+        boolean[] visited = new boolean[V]; //visited array
+        Queue<Integer> queue = new LinkedList<>();//fifo
+        visited[0] = true;// start from v=0
+        queue.add(0);//0 added to queue
         while (!queue.isEmpty()) {
-            int node = queue.poll();
-            bfsList.add(node);
-
-            for (int neighbor : adj.get(node)) {
-                if (!visited[neighbor]) {
-                    visited[neighbor] = true;
-                    queue.add(neighbor);
+            int node = queue.poll();//remove front of queue
+            bfsList.add(node);//add to bfs list
+            for (int neighbor : adj.get(node)) {//node's neighbors
+                if (!visited[neighbor]) { //if not vis
+                    visited[neighbor] = true;// mark it vis
+                    queue.add(neighbor);//add to queue
                 }
             }
         }
-
         return bfsList;
     }
-
     public static void main(String[] args) {
-        BFS sol = new BFS();
-
-        ArrayList<ArrayList<Integer>> adj = new ArrayList<>();
-        adj.add(new ArrayList<>(Arrays.asList(2, 3, 1)));
-        adj.add(new ArrayList<>(Arrays.asList(0)));
-        adj.add(new ArrayList<>(Arrays.asList(0, 4)));
-        adj.add(new ArrayList<>(Arrays.asList(0)));
-        adj.add(new ArrayList<>(Arrays.asList(2)));
-
-        ArrayList<Integer> result = sol.bfs(adj);
+        BFS sol = new BFS();//object of class
+        ArrayList<ArrayList<Integer>> adj = new ArrayList<>(); //adjacency list
+        adj.add(new ArrayList<>(Arrays.asList(2, 3, 1))); // 0 -> 2, 3, 1
+        adj.add(new ArrayList<>(Arrays.asList(0))); // 1 -> 0
+        adj.add(new ArrayList<>(Arrays.asList(0, 4))); // 2 -> 0, 4
+        adj.add(new ArrayList<>(Arrays.asList(0)));// 3 -> 0
+        adj.add(new ArrayList<>(Arrays.asList(2)));// 4 -> 2
+        ArrayList<Integer> result = sol.bfs(adj);//
         System.out.println(result);  // Output: [0, 2, 3, 1, 4]
     }
 }
