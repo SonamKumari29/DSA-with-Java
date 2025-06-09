@@ -2,54 +2,56 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 class floodFillBFS {
-    public int[][] floodFill(int[][] image, int startRow, int startCol, int newColor) {
-        int originalColor = image[startRow][startCol];
-        if (originalColor == newColor) return image;
+    // Fill connected area with new color
+    public int[][] fill(int[][] pic, int sr, int sc, int newCol) {
+        int oldCol = pic[sr][sc]; // old color
+        if (oldCol == newCol) return pic; // nothing to do
 
-        int numRows = image.length;
-        int numCols = image[0].length;
-        Queue<int[]> pixelsToVisit = new LinkedList<>();
-        pixelsToVisit.offer(new int[]{startRow, startCol});
-        image[startRow][startCol] = newColor;
+        int rows = pic.length; // rows count
+        int cols = pic[0].length; // cols count
+        Queue<int[]> q = new LinkedList<>(); // queue for BFS
+        q.offer(new int[]{sr, sc}); // start point
+        pic[sr][sc] = newCol; // color start
 
-        int[][] directions = {{1,0}, {-1,0}, {0,1}, {0,-1}};
+        int[][] dir = {{1,0}, {-1,0}, {0,1}, {0,-1}}; // down, up, right, left directions
 
-        while (!pixelsToVisit.isEmpty()) {
-            int[] currentPixel = pixelsToVisit.poll();
-            int row = currentPixel[0];
-            int col = currentPixel[1];
+        // BFS loop
+        while (!q.isEmpty()) {
+            int[] cell = q.poll(); // get cell
+            int r = cell[0], c = cell[1];
 
-            for (int[] dir : directions) {
-                int neighborRow = row + dir[0];
-                int neighborCol = col + dir[1];
-
-                if (neighborRow >= 0 && neighborRow < numRows &&
-                    neighborCol >= 0 && neighborCol < numCols &&
-                    image[neighborRow][neighborCol] == originalColor) {
-                    image[neighborRow][neighborCol] = newColor;
-                    pixelsToVisit.offer(new int[]{neighborRow, neighborCol});
+            for (int[] d : dir) { // check 4 sides
+                int nr = r + d[0];// new row
+                int nc = c + d[1];// new column
+                // in bounds and same color
+                if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && pic[nr][nc] == oldCol) {
+                    pic[nr][nc] = newCol; // color it
+                    q.offer(new int[]{nr, nc}); // add to queue
                 }
             }
         }
-
-        return image;
+        return pic;
     }
 
     public static void main(String[] args) {
-        int[][] image =  {
+        int[][] pic = {
             {1, 1, 1},
             {1, 1, 0},
             {1, 0, 1}
         };
+        // sr=1, sc=1, newCol=2
+        floodFillBFS ff = new floodFillBFS();
+        int[][] res = ff.fill(pic, 1, 1, 2);
 
-        // startRow = 1, startCol = 1, newColor = 2       
-        floodFillBFS floodFill = new floodFillBFS();
-        int[][] result = floodFill.floodFill(image, 1, 1, 2);
-        for (int[] row : result) {
-            for (int val : row)
-                System.out.print(val + " ");
+        for (int[] row : res) {
+            for (int v : row)
+                System.out.print(v + " ");
             System.out.println();
         }
+        // Output:
+        // 2 2 2 
+        // 2 2 0 
+        // 2 0 1 
     }
 }
 
