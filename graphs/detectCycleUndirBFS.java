@@ -1,55 +1,55 @@
-import java.util.*;
+import java.util.*; // Import all utility classes
 
 public class detectCycleUndirBFS {
-    static class Pair {
+    static class Pair { // Helper class to store node and its parent
         int node, parent;
         Pair(int node, int parent) {
-            this.node = node;
-            this.parent = parent;
+            this.node = node; // Node value
+            this.parent = parent; // Parent value
         }
     }
 
     public static boolean isCyclic(int V, List<List<Integer>> adj) {
-        boolean[] visited = new boolean[V];
-        for (int i = 0; i < V; i++) {
-            if (!visited[i]) {
-                if (bfsCheck(i, adj, visited)) return true;
+        boolean[] visited = new boolean[V]; // Track visited nodes
+        for (int i = 0; i < V; i++) { // For each node
+            if (!visited[i]) { // If not visited
+                if (bfsCheck(i, adj, visited)) return true; // If cycle found, return true
             }
         }
-        return false;
+        return false; // No cycle found
     }
 
     private static boolean bfsCheck(int src, List<List<Integer>> adj, boolean[] visited) {
-        Queue<Pair> q = new LinkedList<>();
-        visited[src] = true;
-        q.add(new Pair(src, -1));
-        while (!q.isEmpty()) {
-            Pair p = q.poll();
-            int node = p.node;
-            int parent = p.parent;
-            for (int neighbor : adj.get(node)) {
-                if (!visited[neighbor]) {
-                    visited[neighbor] = true;
-                    q.add(new Pair(neighbor, node));
-                } else if (neighbor != parent) {
-                    return true;
+        Queue<Pair> q = new LinkedList<>(); // Queue for BFS
+        visited[src] = true; // Mark source as visited
+        q.add(new Pair(src, -1)); // Add source with no parent
+        while (!q.isEmpty()) { // While queue not empty
+            Pair p = q.poll(); // Get next node
+            int node = p.node; // Current node
+            int parent = p.parent; // Parent node
+            for (int neighbor : adj.get(node)) { // For each neighbor
+                if (!visited[neighbor]) { // If neighbor not visited
+                    visited[neighbor] = true; // Mark as visited
+                    q.add(new Pair(neighbor, node)); // Add to queue with parent
+                } else if (neighbor != parent) { // If visited and not parent
+                    return true; // Cycle found
                 }
             }
         }
-        return false;
+        return false; // No cycle found in this component
     }
 
     public static void main(String[] args) {
-        int V = 5;
-        List<List<Integer>> adj = new ArrayList<>();
-        for (int i = 0; i < V; i++) adj.add(new ArrayList<>());
-        adj.get(0).add(1); adj.get(1).add(0);
-        adj.get(1).add(2); adj.get(2).add(1);
-        adj.get(2).add(3); adj.get(3).add(2);
-        adj.get(3).add(4); adj.get(4).add(3);
-        adj.get(4).add(1); adj.get(1).add(4);
+        int V = 5; // Number of vertices
+        List<List<Integer>> adj = new ArrayList<>(); // Adjacency list
+        for (int i = 0; i < V; i++) adj.add(new ArrayList<>()); // Initialize lists
+        adj.get(0).add(1); adj.get(1).add(0); // Edge 0-1
+        adj.get(1).add(2); adj.get(2).add(1); // Edge 1-2
+        adj.get(2).add(3); adj.get(3).add(2); // Edge 2-3
+        adj.get(3).add(4); adj.get(4).add(3); // Edge 3-4
+        adj.get(4).add(1); adj.get(1).add(4); // Edge 4-1 (creates cycle)
 
-        System.out.println(isCyclic(V, adj) ? "Cycle detected" : "No cycle");
+        System.out.println(isCyclic(V, adj) ? "Cycle detected" : "No cycle"); // output 
     }
 }
 
