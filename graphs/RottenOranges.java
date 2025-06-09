@@ -1,3 +1,19 @@
+/*
+Flow:
+- Add all rotten oranges to a queue.
+- Count all fresh oranges.
+- Run BFS level by level (each level = 1 minute).
+- For each rotten orange, rot adjacent fresh ones.
+- Track time and decrease fresh count.
+- If fresh count becomes 0, return time; else return -1.
+
+Time Complexity: O(m * n)
+- Each cell is processed once.
+
+Space Complexity: O(m * n)
+- Queue can store all cells in worst case.
+*/
+
 import java.util.LinkedList;
 import java.util.Queue;
 class RottenOranges {
@@ -51,18 +67,3 @@ class RottenOranges {
     }
 }
 
-/*
-Algorithm Flow:
-- Add all rotten oranges to a queue.
-- Count all fresh oranges.
-- Run BFS level by level (each level = 1 minute).
-- For each rotten orange, rot adjacent fresh ones.
-- Track time and decrease fresh count.
-- If fresh count becomes 0, return time; else return -1.
-
-Time Complexity: O(m * n)
-- Each cell is processed once.
-
-Space Complexity: O(m * n)
-- Queue can store all cells in worst case.
-*/

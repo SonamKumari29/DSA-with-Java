@@ -1,3 +1,13 @@
+/*
+BFS Flood Fill Steps:
+- Get original color at (startRow, startCol).
+- If originalColor == newColor, return image.
+- Use a queue to process pixels.
+- For each pixel, color it and enqueue neighbors with originalColor.
+- Repeat until queue is empty.
+- Time: O(m*n), Space: O(m*n) for m x n image.
+*/
+
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -55,12 +65,3 @@ class floodFillBFS {
     }
 }
 
-/*
-BFS Flood Fill Steps:
-- Get original color at (startRow, startCol).
-- If originalColor == newColor, return image.
-- Use a queue to process pixels.
-- For each pixel, color it and enqueue neighbors with originalColor.
-- Repeat until queue is empty.
-- Time: O(m*n), Space: O(m*n) for m x n image.
-*/

@@ -1,3 +1,18 @@
+// Flow:
+// 1. Initialize an (n+1) x (n+1) matrix with all zeros.
+// 2. For each edge (u, v), set adjMatrix[u][v] = 1 and adjMatrix[v][u] = 1 (since the graph is undirected).
+// 3. Print the adjacency matrix.
+//
+
+// Time Complexity (TC):
+// - Matrix initialization: O(n^2)
+// - Adding edges: O(E), where E = number of edges
+// - Printing the matrix: O(n^2)
+// - Overall: O(n^2) 
+//
+
+// Space Complexity (SC): O(n^2)
+
 // 1 -- 3
 // |     | \
 // 2 -- 4 -- 5
@@ -24,18 +39,3 @@ public class AdjacencyMatrix {
         }
     }
 }
-
-// Algorithm Flow:
-// 1. Initialize an (n+1) x (n+1) matrix with all zeros.
-// 2. For each edge (u, v), set adjMatrix[u][v] = 1 and adjMatrix[v][u] = 1 (since the graph is undirected).
-// 3. Print the adjacency matrix.
-//
-
-// Time Complexity (TC):
-// - Matrix initialization: O(n^2)
-// - Adding edges: O(E), where E = number of edges
-// - Printing the matrix: O(n^2)
-// - Overall: O(n^2) 
-//
-
-// Space Complexity (SC): O(n^2)

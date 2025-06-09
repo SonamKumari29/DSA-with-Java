@@ -1,3 +1,11 @@
+/*
+Flood Fill DFS:
+- Start from (startRow, startCol), store oldColor.
+- If oldColor == newColor, return.
+- Recursively fill 4 directions if color matches oldColor.
+- Time: O(m*n), Space: O(m*n) (recursion stack).
+*/
+
 public class floodFillDFS {
     public int[][] floodFill(int[][] picture, int startX, int startY, int newColor) {
         int oldColor = picture[startX][startY]; 
@@ -59,11 +67,4 @@ Final picture:
 2 2 2
 2 2 0
 2 0 1
-*/
-/*
-Flood Fill DFS:
-- Start from (startRow, startCol), store oldColor.
-- If oldColor == newColor, return.
-- Recursively fill 4 directions if color matches oldColor.
-- Time: O(m*n), Space: O(m*n) (recursion stack).
 */

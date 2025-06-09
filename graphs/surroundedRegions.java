@@ -1,3 +1,15 @@
+/*
+Algorithm (DFS):
+
+1. From all 'O's on the border, run DFS to mark connected 'O's as temporary character 'T'.
+
+2. After that, iterate over the board:
+    - Convert all remaining 'O's (surrounded ones) to 'X'.
+    - Convert 'T's back to 'O' (these are border-connected).
+
+Time Complexity: O(m * n)
+Space Complexity: O(m * n) in worst case due to recursion stack.
+*/
 class surroundedRegions {
     public void solve(char[][] board) {
         int m = board.length; // number of rows
@@ -59,15 +71,3 @@ class surroundedRegions {
     }
 }
 
-/*
-Algorithm (DFS):
-
-1. From all 'O's on the border, run DFS to mark connected 'O's as temporary character 'T'.
-
-2. After that, iterate over the board:
-    - Convert all remaining 'O's (surrounded ones) to 'X'.
-    - Convert 'T's back to 'O' (these are border-connected).
-
-Time Complexity: O(m * n)
-Space Complexity: O(m * n) in worst case due to recursion stack.
-*/

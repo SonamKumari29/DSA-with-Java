@@ -1,4 +1,21 @@
-import java.util.*; // import utilities
+/*
+Flow:
+1. Add all 0 cells to the queue and mark them as visited.
+
+2. While the queue is not empty:
+    - Pop a cell from the queue.
+    - For each direction (up, down, left, right):
+      - Check if the neighbor is valid and not visited.
+      - If valid, set distance = parent distance + 1, mark as visited, and add to queue.
+
+Time Complexity: O(m × n)
+- Each cell is processed once.
+
+Space Complexity: O(m × n)
+- Used for the queue, visited matrix, and result matrix.
+*/
+
+import java.util.*; 
 
 //bfs approach
 class matrix01 {
@@ -61,19 +78,3 @@ class matrix01 {
     }
 }
 
-/*
-Algorithm Flow:
-1. Add all 0 cells to the queue and mark them as visited.
-
-2. While the queue is not empty:
-    - Pop a cell from the queue.
-    - For each direction (up, down, left, right):
-      - Check if the neighbor is valid and not visited.
-      - If valid, set distance = parent distance + 1, mark as visited, and add to queue.
-
-Time Complexity: O(m × n)
-- Each cell is processed once.
-
-Space Complexity: O(m × n)
-- Used for the queue, visited matrix, and result matrix.
-*/

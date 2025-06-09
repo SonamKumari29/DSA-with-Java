@@ -1,4 +1,17 @@
-import java.util.ArrayList; // ArrayList import
+/*
+Flow:
+1. Convert adjacency matrix to adjacency list.
+2. For each unvisited node, call DFS.
+3. Each DFS marks a whole province.
+4. Count total DFS calls = total provinces.
+
+Time Complexity: O(V + E)
+    
+
+Space Complexity: O(V)
+    - Visited array + recursion stack in DFS
+*/
+import java.util.ArrayList; 
 
 class numOfProvinces {
     // DFS function
@@ -57,16 +70,4 @@ class numOfProvinces {
     }
 }
 
-/*
-Algorithm Flow:
-1. Convert adjacency matrix to adjacency list.
-2. For each unvisited node, call DFS.
-3. Each DFS marks a whole province.
-4. Count total DFS calls = total provinces.
 
-Time Complexity: O(V + E)
-    
-
-Space Complexity: O(V)
-    - Visited array + recursion stack in DFS
-*/
