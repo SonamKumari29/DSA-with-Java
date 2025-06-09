@@ -9,7 +9,6 @@ class DFS {
         int V = adj.size();  // number of vertices
         boolean[] visited = new boolean[V];//visited array
         ArrayList<Integer> dfsList = new ArrayList<>();//dfs ans 
-
         dfsUtil(0, adj, visited, dfsList);//helper fn 
         return dfsList;
     }

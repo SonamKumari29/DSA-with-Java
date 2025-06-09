@@ -37,5 +37,6 @@ public class AdjacencyMatrix {
 // - Printing the matrix: O(n^2)
 // - Overall: O(n^2) (dominated by initialization and printing)
 //
+
 // Space Complexity (SC):
 // - Adjacency matrix storage: O(n^2)

@@ -33,7 +33,7 @@ class BFS {
         adj.add(new ArrayList<>(Arrays.asList(0, 4))); // 2 -> 0, 4
         adj.add(new ArrayList<>(Arrays.asList(0)));// 3 -> 0
         adj.add(new ArrayList<>(Arrays.asList(2)));// 4 -> 2
-        ArrayList<Integer> result = sol.bfs(adj);//
+        ArrayList<Integer> result = sol.bfs(adj);//call bfs fn
         System.out.println(result);  // Output: [0, 2, 3, 1, 4]
     }
 }

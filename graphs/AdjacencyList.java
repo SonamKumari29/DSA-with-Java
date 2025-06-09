@@ -8,8 +8,7 @@ import java.util.List;
 public class AdjacencyList {
     public static void main(String[] args) {
         int n = 5;
-        @SuppressWarnings("unchecked")
-        List<Integer>[] adjList = (ArrayList<Integer>[]) new ArrayList[n+1];
+        List<Integer>[] adjList = new List[n+1];
 
         for (int i = 1; i <= n; i++) {
             adjList[i] = new ArrayList<>();
