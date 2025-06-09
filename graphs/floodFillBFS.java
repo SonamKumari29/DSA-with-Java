@@ -5,7 +5,7 @@ class floodFillBFS {
     // Fill connected area with new color
     public int[][] fill(int[][] pic, int sr, int sc, int newCol) {
         int oldCol = pic[sr][sc]; // old color
-        if (oldCol == newCol) return pic; // nothing to do
+        if (oldCol == newCol) return pic; // If same color, do nothing
 
         int rows = pic.length; // rows count
         int cols = pic[0].length; // cols count

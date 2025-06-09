@@ -47,7 +47,7 @@ class RottenOranges {
         int arr[][]={ {2,1,1} , {1,1,0} , {0,1,1} };
         RottenOranges ro = new RottenOranges();
         int rotting = ro.orangesRotting(arr);
-        System.out.println("Minimum Number of Minutes Required "+rotting); //
+        System.out.println("Minimum Number of Minutes Required "+rotting); // Output: 4
     }
 }
 
