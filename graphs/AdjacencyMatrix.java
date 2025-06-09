@@ -35,8 +35,7 @@ public class AdjacencyMatrix {
 // - Matrix initialization: O(n^2)
 // - Adding edges: O(E), where E = number of edges
 // - Printing the matrix: O(n^2)
-// - Overall: O(n^2) (dominated by initialization and printing)
+// - Overall: O(n^2) 
 //
 
-// Space Complexity (SC):
-// - Adjacency matrix storage: O(n^2)
+// Space Complexity (SC): O(n^2)
