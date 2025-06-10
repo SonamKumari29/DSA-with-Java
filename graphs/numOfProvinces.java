@@ -32,7 +32,7 @@ class numOfProvinces {
         // Matrix to list
         for (int i = 0; i < V; i++) {
             for (int j = 0; j < V; j++) {
-                if (adj.get(i).get(j) == 1 && i != j) { // If edge
+                if (adj.get(i).get(j) == 1 && i != j) { // If edge and no self loop
                     adjLs.get(i).add(j); // Add neighbor
                 }
             }

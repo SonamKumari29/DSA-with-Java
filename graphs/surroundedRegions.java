@@ -64,9 +64,9 @@ class surroundedRegions {
 
         for (char[] row : board) {
             for (char c : row) {
-                System.out.print(c + " "); // print each cell
+                System.out.print(c + " "); 
             }
-            System.out.println(); // new line after each row
+            System.out.println();
         }
     }
 }

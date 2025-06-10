@@ -55,19 +55,19 @@ class matrix01 {
             }
         }
 
-        return res; // return result
+        return res; 
     }
 
     public static void main(String[] args) {
-        matrix01 sol = new matrix01(); // create object
+        matrix01 sol = new matrix01(); 
 
         int[][] mat = {
             {0, 0, 0},
             {0, 1, 0},
             {1, 1, 1}
-        }; // input matrix
+        }; 
 
-        int[][] result = sol.updateMatrix(mat); // call function
+        int[][] result = sol.updateMatrix(mat); 
 
         for (int[] row : result) { // print result
             for (int val : row) {
