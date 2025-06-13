@@ -8,6 +8,7 @@
 //
 // Time Complexity: O(m * n) where m = number of rows, n = number of columns.
 // Space Complexity: O(m * n) due to recursion stack in DFS in the worst case.
+
 class numOfEnclaves { 
     public int numEnclaves(int[][] grid) { 
         int m = grid.length; // Number of rows
